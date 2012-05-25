@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-  <title>iFreerun</title>
+  <meta charset="utf-8">
+	<title>Parkour / Freerunning communities and hotspots around the world | iFreerun.com</title>
+	<meta name="description" content="Find Parkour and Freerunning communities and hotspots around the world. Meet with locals to learn parkour and freerunning.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
   <%= stylesheet_link_tag    "application", :media => "all" %>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+	
+	<script type="text/javascript" src="http://use.typekit.com/ohu7hxr.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<div class="container">
+		<%= yield %>		
+	</div><!-- container -->
 	
-	<div id="container">
-		<div id="user_header">
-			<%= link_to "Sign Up", new_user_path %>
+	<footer>
+		<div class="container">
+			<div class="sixteen columns">
+				Find us on Twitter.
+			</div>
 		</div>
-		
-		<% flash.each do |name, msg| %>
-			<%= content_tag :div, msg, id: "flash_#{name}"%>
-		<% end %>
-		
-		<%= yield %>
-	</div>	
+	</footer>
 
 </body>
 </html>
