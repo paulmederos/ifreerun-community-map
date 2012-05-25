@@ -12,12 +12,13 @@ gem 'sqlite3'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+	gem 'less', '~> 2.2.1'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+	gem 'nifty-generators'
 end
 
 gem 'jquery-rails'
