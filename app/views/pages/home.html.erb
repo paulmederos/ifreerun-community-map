@@ -10,12 +10,12 @@
 		<% end %>
 		</ol>
 	</div>
-	<div class="six columns" style="background:rgba(0,200,0,.2);">
+	<div class="eight columns" style="background:rgba(0,200,0,.2);">
 		<h2>List of Communities</h2>
 		<%= link_to "New Community", new_community_path %>
 		<ol style="margin-top:1em;">
 			<% @communities.each do |c| %>
-				<li><%= link_to c.name, c %> [ <%= link_to "site", c.url %> ]</li>
+				<li><%= link_to c.name, c %> [ <%= link_to "site", c.url %>, <%= "#{c.location.address}: #{c.location.latitude}, #{c.location.longitude}" %> ]</li>
 			<% end %>
 		</ol>
 	</div>
