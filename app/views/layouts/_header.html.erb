@@ -1,5 +1,6 @@
 <header class="container">
 	<div class="sixteen columns" id="user_header">
+		<%= link_to "Home", root_url, :style => "float: left;"  %>
 		<% if current_user %>
 			Logged in as <%= current_user.email %>.
 			<%= link_to "Log Out", logout_path %>
