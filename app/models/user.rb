@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   
   validates_uniqueness_of :email
+  #validate proper email, validate length of password
 end
