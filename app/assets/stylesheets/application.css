@@ -11,3 +11,5 @@
  *= require_self
  *= require_tree .
 */
+
+#user_header { text-align: right; }
