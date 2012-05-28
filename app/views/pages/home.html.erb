@@ -2,16 +2,21 @@
 	<div class="sixteen columns">	
 		<h1>Where do you want to run?</h1>
 	</div>
-	<div class="four columns" style="background:rgba(150,0,0,.2);">
+	<div class="four columns" style="background:rgba(200,0,0,.2);">
 		<h2>List of Users</h2>
-		<ul>
+		<ol>
 		<% @users.each do |u| %>
 			<li><%= u.email %></li>
 		<% end %>
-		</ul>
+		</ol>
 	</div>
-	<div class="six columns" style="background:red;">
+	<div class="six columns" style="background:rgba(0,200,0,.2);">
 		<h2>List of Communities</h2>
-		<%= link_to "New Community", "#new_community_path" %>
+		<%= link_to "New Community", new_community_path %>
+		<ol style="margin-top:1em;">
+			<% @communities.each do |c| %>
+				<li><%= link_to c.name, c %> [ <%= link_to "site", c.url %> ]</li>
+			<% end %>
+		</ol>
 	</div>
 </section>

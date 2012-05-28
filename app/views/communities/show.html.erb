@@ -1,0 +1,18 @@
+<p>
+  <strong>Name:</strong>
+  <%= @community.name %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= @community.url %>
+</p>
+<p>
+  <strong>Summary:</strong>
+  <%= @community.summary %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_community_path(@community) %> |
+  <%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", communities_path %>
+</p>

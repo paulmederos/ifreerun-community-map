@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Summary</th>
+  </tr>
+  <% for community in @communities %>
+    <tr>
+      <td><%= community.name %></td>
+      <td><%= community.url %></td>
+      <td><%= community.summary %></td>
+      <td><%= link_to "Show", community %></td>
+      <td><%= link_to "Edit", edit_community_path(community) %></td>
+      <td><%= link_to "Destroy", community, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Community", new_community_path %></p>

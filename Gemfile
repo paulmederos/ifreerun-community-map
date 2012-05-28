@@ -24,3 +24,5 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'rails-backbone'
+
+gem "mocha", :group => :test
