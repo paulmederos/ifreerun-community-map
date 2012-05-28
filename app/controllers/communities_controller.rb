@@ -9,6 +9,7 @@ class CommunitiesController < ApplicationController
 
   def new
     @community = Community.new
+    @community.build_location
   end
 
   def create

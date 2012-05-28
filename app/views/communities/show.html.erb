@@ -12,6 +12,13 @@
 </p>
 
 <p>
+  <strong>Location:</strong>
+  <%= "#{@community.location.address} [#{@community.location.latitude},
+ 																			 #{@community.location.longitude}]" %>
+</p>
+
+
+<p>
   <%= link_to "Edit", edit_community_path(@community) %> |
   <%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", communities_path %>
