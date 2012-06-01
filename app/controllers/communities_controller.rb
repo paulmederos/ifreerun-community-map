@@ -14,7 +14,7 @@ class CommunitiesController < ApplicationController
 
   def create
     @community = Community.new(params[:community])
-    if @community.save!
+    if @community.save
       redirect_to @community, :notice => "Successfully created community."
     else
       render :action => 'new'
