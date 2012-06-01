@@ -1,41 +1,42 @@
 <section class="clearfix">
 	<div class="sixteen columns">	
 		<h1>Where do you want to run?</h1>
-	</div>
-	<div class="eight columns" style="background:rgba(0,200,0,.2);">
-		<h2>List of Communities</h2>
-		<%= link_to "New Community", new_community_path unless !current_user %>
-		<ol style="margin-top:1em;">
-			<% @locations.each do |loc| %>
-				<li><%= link_to loc.community.name, loc.community %> [ <%= link_to "site", loc.community.url %>, <%= "#{loc.community.location.address}: #{loc.community.location.latitude}, #{loc.community.location.longitude}" %> ]</li>
-			<% end %>
-		</ol>
-	</div>
-	
-	<% unless !current_user %>
-	<div class="four columns" style="background:rgba(200,0,0,.2);">
-		<h2>List of Users</h2>
-		<ol>
-		<% @users.each do |u| %>
-			<li><%= u.email %></li>
-		<% end %>
-		</ol>
-	</div>
-	<% end %>
-	
-	<div class="sixteen columns">		
 		<%= form_tag root_url, :method => :get do %>
 		  <p>
 		    <%= text_field_tag :search, params[:search] %>
 		    <%= submit_tag "Search Near", :name => nil %>
 		  </p>
 		<% end %>
+	</div>
+	<div class="eight columns">
+		<div class="eight columns" style="background:rgba(0,200,0,.2);">
+			<h2>List of Communities</h2>
+			<%= link_to "New Community", new_community_path unless !current_user %>
+			<ol style="margin-top:1em;">
+				<% @locations.each do |loc| %>
+					<li><%= link_to loc.community.name, loc.community %> [ <%= link_to "site", loc.community.url %>, <%= "#{loc.community.location.address}: #{loc.community.location.latitude}, #{loc.community.location.longitude}" %> ]</li>
+				<% end %>
+			</ol>
+		</div>
 		
+		<% unless !current_user %>
+		<div class="eight columns" style="background:rgba(200,0,0,.2);">
+			<h2>List of Users</h2>
+			<ol>
+			<% @users.each do |u| %>
+				<li><%= u.email %></li>
+			<% end %>
+			</ol>
+		</div>
+		<% end %>
+		
+	</div>
+	
+	<div class="eight columns">				
 		<%= gmaps("map_options" => { 
 				"detect_location" => true, 
 				"center_on_user" => false, 
 				"zoom" => 6},
 				"markers" => { "data" => @locations_json }) %>
-		
-	</div>
+	</div>	
 </section>
