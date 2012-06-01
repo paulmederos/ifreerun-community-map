@@ -25,5 +25,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'rails-backbone'
 gem 'geocoder'
+gem 'gmaps4rails'
 
 gem "mocha", :group => :test

@@ -22,4 +22,13 @@
 		</ol>
 	</div>
 	<% end %>
+	
+	<div class="sixteen columns">
+		<%= gmaps("map_options" => { 
+				"detect_location" => true, 
+				"center_on_user" => false, 
+				"zoom" => 6},
+				"markers" => { "data" => @json }) %>
+		
+	</div>
 </section>
