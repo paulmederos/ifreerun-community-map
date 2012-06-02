@@ -1,25 +1,22 @@
-<h1>Add a New Community</h1>
 <%= form_for @community do |f| %>
-  <% # f.error_messages %>
-
 	<p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name, :placeholder => "ex. Virginia Tech Parkour" %>
   </p>
 
 	<%= f.fields_for :location do |loc| %>
 		<p>
-	    <%= loc.label :address %><br />
+	    <%= loc.label :address %>
 	    <%= loc.text_field :address %>
 	  </p>
 	<% end %>
 
   <p>
-    <%= f.label :url, "Website URL" %><br />
+    <%= f.label :url, "Website URL" %>
     <%= f.text_field :url, :placeholder => "ex. http://ifreerun.com" %>
   </p>
   <p>
-    <%= f.label :summary %><br />
+    <%= f.label :summary %>
     <%= f.text_area :summary %>
   </p>
   <p><%= f.submit %></p>
