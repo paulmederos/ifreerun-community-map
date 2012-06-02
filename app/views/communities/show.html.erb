@@ -1,25 +1,17 @@
-<p>
-  <strong>Name:</strong>
-  <%= @community.name %>
-</p>
-<p>
-  <strong>URL:</strong>
-  <%= @community.url %>
-</p>
-<p>
-  <strong>Summary:</strong>
-  <%= @community.summary %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= "#{@community.location.address} [#{@community.location.latitude},
- 																			 #{@community.location.longitude}]" %>
-</p>
+<strong>Name:</strong>
+<%= @community.name %>
+
+<strong>URL:</strong>
+<%= @community.url %>
+
+<strong>Summary:</strong>
+<%= @community.summary %>
+
+<strong>Location:</strong>
+<%= "#{@community.location.address} [#{@community.location.latitude}, #{@community.location.longitude}]" %>
 
 
-<p>
-  <%= link_to "Edit", edit_community_path(@community) %> |
-  <%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", communities_path %>
-</p>
+<%= link_to "Edit", edit_community_path(@community) %> |
+<%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to "View All", communities_path %>

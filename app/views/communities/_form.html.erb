@@ -1,12 +1,12 @@
 <%= form_for @community do |f| %>
 	<p>
-    <%= f.label :name %>
+    <%= f.label :name, "Community Name" %>
     <%= f.text_field :name, :placeholder => "ex. Virginia Tech Parkour" %>
   </p>
 
 	<%= f.fields_for :location do |loc| %>
 		<p>
-	    <%= loc.label :address %>
+	    <%= loc.label :address, "Location (City, State) of Community" %>
 	    <%= loc.text_field :address %>
 	  </p>
 	<% end %>

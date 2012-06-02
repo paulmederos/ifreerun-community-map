@@ -1,5 +1,5 @@
 <div class="be-a-traceur">
-	<h1>Find a Parkour or Freerunning community</h1>
+	<h1>Find a Parkour or Freerunning community around you</h1>
 	<p>Learn how to move, jump, run, climb, and have fun learning parkour or freerunning.</p>
 </div>
 
@@ -27,8 +27,8 @@
 	<% if @locations.present? %> <div class="map small-map"> <% else %> <div class="map"> <% end %>	
 		<%= gmaps("map_options" => { 
 				"detect_location" => true, 
-				"center_on_user" => false, 
-				"zoom" => 6},
+				"center_on_user" => true, 
+				"zoom" => 9},
 				"markers" => { "data" => @locations_json }) %>
 	</div><!-- end .map -->
 </div><!-- end .results -->
