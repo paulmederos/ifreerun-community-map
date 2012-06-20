@@ -32,3 +32,7 @@
 				"markers" => { "data" => @locations_json }) %>
 	</div><!-- end .map -->
 </div><!-- end .results -->
+
+<%= javascript_tag do %>
+	mixpanel.track('Visited Map page');
+<% end unless Rails.env.production? %>
