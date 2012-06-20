@@ -7,3 +7,7 @@
 	<p>Email your questions to <a href="mailto:hello@ifreerun.com">hello@ifreerun.com</a>, or tweet us <a href="http://twitter.com/ifreeruncom">@ifreeruncom</a>.</p>
 	<p>We typically respond within a few minutes.</p>
 </div>	
+
+<%= javascript_tag do %>
+	mixpanel.track('Visited What Is PK page');
+<% end unless Rails.env.production? %>

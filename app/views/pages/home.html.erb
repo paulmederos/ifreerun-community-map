@@ -3,4 +3,8 @@
 	<li><a href="/what-is-parkour-and-freerunning">What is Parkour and Freerunning?</a></li>
 	<li><a href="/map">Where can I find a place to train?</a></li>
 	<li><a href="/conditioning">How do I train or workout to get stronger?</a></li>
-<ul>	
+<ul>
+	
+<%= javascript_tag do %>
+	mixpanel.track('Visited Home page');
+<% end unless Rails.env.production? %>

@@ -19,3 +19,7 @@
 </div>
 
 <!--End mc_embed_signup-->
+
+<%= javascript_tag do %>
+	mixpanel.track('Visited Conditioning page');
+<% end unless Rails.env.production? %>
