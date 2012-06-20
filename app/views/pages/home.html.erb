@@ -7,4 +7,4 @@
 	
 <%= javascript_tag do %>
 	mixpanel.track('Visited Home page');
-<% end unless Rails.env.production? %>
+<% end unless !Rails.env.production? %>

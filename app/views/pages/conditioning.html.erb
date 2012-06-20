@@ -22,4 +22,4 @@
 
 <%= javascript_tag do %>
 	mixpanel.track('Visited Conditioning page');
-<% end unless Rails.env.production? %>
+<% end unless !Rails.env.production? %>

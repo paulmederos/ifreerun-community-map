@@ -10,4 +10,4 @@
 
 <%= javascript_tag do %>
 	mixpanel.track('Visited What Is PK page');
-<% end unless Rails.env.production? %>
+<% end unless !Rails.env.production? %>

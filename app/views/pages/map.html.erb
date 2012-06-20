@@ -35,4 +35,4 @@
 
 <%= javascript_tag do %>
 	mixpanel.track('Visited Map page');
-<% end unless Rails.env.production? %>
+<% end unless !Rails.env.production? %>
