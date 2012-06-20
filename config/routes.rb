@@ -15,6 +15,7 @@ Ifreerun::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'pages#home'
   
+  match '/conditioning' => 'pages#conditioning'
   match '/map' => 'pages#map'
  
   # Sample of regular route:
