@@ -14,4 +14,5 @@ class PagesController < ApplicationController
       marker.infowindow render_to_string(:partial => "/locations/marker", :object => location)
     end
   end
+  
 end

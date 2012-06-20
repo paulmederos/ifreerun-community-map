@@ -17,6 +17,7 @@ Ifreerun::Application.routes.draw do
   
   match '/conditioning' => 'pages#conditioning'
   match '/map' => 'pages#map'
+  match '/what-is-parkour-and-freerunning' => 'pages#what'
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
