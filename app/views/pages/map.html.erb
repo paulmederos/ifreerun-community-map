@@ -1,0 +1,34 @@
+<div class="be-a-traceur">
+	<h1>Find a Parkour or Freerunning community around you</h1>
+	<p>Learn how to move, jump, run, climb, and have fun learning parkour or freerunning.</p>
+</div>
+
+<div class="search">	
+	<%= form_tag map_url, :method => :get do %>
+	    <%= text_field_tag :search, params[:search], :placeholder => "ex. Blacksburg, VA" %>
+	    <%= submit_tag "Find me some Parkour", :name => nil %>
+	<i>or, add a <%= link_to "new community", new_community_path %>.</i>
+	<% end %>
+</div>
+
+<div class="results">
+	<% if @locations.present? %>
+	<div class="sidebar">
+		<h2>Communities</h2>
+		<%= link_to "New Community", new_community_path unless !current_user %>
+		<ol>
+				<% @locations.each do |loc| %>
+					<li><%= link_to loc.community.name, loc.community %> [ <%= link_to "site", loc.community.url %>, <%= "#{loc.community.location.address}: #{loc.community.location.latitude}, #{loc.community.location.longitude}" %> ]</li>
+				<% end %>
+		</ol>
+	</div><!-- end .sidebar -->
+	<% end %>
+	
+	<% if @locations.present? %> <div class="map small-map"> <% else %> <div class="map"> <% end %>	
+		<%= gmaps("map_options" => { 
+				"detect_location" => true, 
+				"center_on_user" => true, 
+				"zoom" => 9},
+				"markers" => { "data" => @locations_json }) %>
+	</div><!-- end .map -->
+</div><!-- end .results -->
